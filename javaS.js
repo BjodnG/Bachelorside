@@ -20,7 +20,7 @@
   });
 
 
-  function showImagesTextLeft(wrap, text, img) {
+  function showImagesText(wrap, text, img) {
 
       $(wrap).each(function(){
           if (scrollCheck($(this))) {
@@ -28,6 +28,9 @@
                   
                   if($(this).css('left') == '-50px')
                     moveFromLeft($(this));
+
+                  if($(this).css('left') == '50px')
+                    moveFromRight($(this));
               });
               $(img).each(function(){
                   $(this).addClass("fadeInSlow");
@@ -35,6 +38,7 @@
           }
       });
   }
+  /*
   function showImagesTextRight(wrap, text, img) {
 
       $(wrap).each(function(){
@@ -48,22 +52,22 @@
               });
           }
       });
-  }
+  }*/
 
   $(document).ready(function(){
-    showImagesTextRight('.grpMdlmWrap', '.grpMdlmWrap .tekstRight', '.grpMdlmWrap .fadeSlow');
+    showImagesText('#ThomasG', '#ThomasG .tekstRight', '#ThomasG .fadeSlow');
   });
 
   $(window).scroll(function() {
-    showImagesTextRight('.grpMdlmWrap', '.grpMdlmWrap .tekstRight', '.grpMdlmWrap .fadeSlow');
+    showImagesText('#ThomasG', '#ThomasG .tekstRight', '#ThomasG .fadeSlow');
   });
 
 $(document).ready(function(){
-    showImagesTextLeft('.grpMdlmWrap', '.grpMdlmWrap .tekstLeft', '.grpMdlmWrap .fadeSlow');
+    showImagesText('#LarsH', '#LarsH .tekstLeft', '#LarsH .fadeSlow');
   });
 
   $(window).scroll(function() {
-    showImagesTextLeft('.grpMdlmWrap', '.grpMdlmWrap .tekstLeft', '.grpMdlmWrap .fadeSlow');
+    showImagesText('#LarsH', '#LarsH .tekstLeft', '#LarsH .fadeSlow');
   });
 
 
