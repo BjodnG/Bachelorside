@@ -1,57 +1,11 @@
 
-var start = false;
-
-//Fade sakte
-  function showImages(el, ele) {
-      var windowHeight = jQuery( window ).height();
-      $(el).each(function(){
-          var thisPos = $(this).offset().top;
-
-          var topOfWindow = $(window).scrollTop();
-          if (topOfWindow + windowHeight - 200 > thisPos ) {
-              $(this).addClass("fadeInSlow");
-              if(!start){
-                moveFromRight();
-                start = true;
-              }
-          }
-      });
-      /*
-      $(ele).each(function(){
-          var thisPos = $(this).offset().top;
-
-          var topOfWindow = $(window).scrollTop();
-          if (topOfWindow + windowHeight - 200 > thisPos ) {
-              
-                console.log(ele);
-                moveFromRight(ele);
-                moveFromLeft(ele);
-                start = true;
-              
-
-          }
-      });
-      */
-  }
-
-  $(document).ready(function(){
-    showImages('.fadeSlow', '.tekstRight');
-  });
-
-  $(window).scroll(function() {
-    showImages('.fadeSlow', '.tekstRight');
-  });
 
 
 
 //Fade kjapt
   function showImagesFast(el) {
-      var windowHeight = jQuery( window ).height();
       $(el).each(function(){
-          var thisPos = $(this).offset().top;
-
-          var topOfWindow = $(window).scrollTop();
-          if (topOfWindow + windowHeight - 200 > thisPos ) {
+          if (scrollCheck($(el))) {
               $(this).addClass("fadeInFast");
           }
       });
@@ -66,33 +20,58 @@ var start = false;
   });
 
 
-  function showImagesText(wrap, text) {
+  function showImagesTextLeft(wrap, text, img) {
 
-      var windowHeight = jQuery( window ).height();
       $(wrap).each(function(){
-          var thisPos = $(this).offset().top;
-
-          var topOfWindow = $(window).scrollTop();
-          if (topOfWindow + windowHeight - 200 > thisPos ) {
+          if (scrollCheck($(this))) {
               $(text).each(function(){
+                  
+                  if($(this).css('left') == '-50px')
+                    moveFromLeft($(this));
+              });
+              $(img).each(function(){
+                  $(this).addClass("fadeInSlow");
+              });
+          }
+      });
+  }
+  function showImagesTextRight(wrap, text, img) {
 
-                  moveFromLeft($(this));
+      $(wrap).each(function(){
+          if (scrollCheck($(this))) {
+              $(text).each(function(){
+                  if($(this).css('left') == '50px')
+                    moveFromRight($(this));
+              });
+              $(img).each(function(){
+                $(this).addClass("fadeInSlow");
               });
           }
       });
   }
 
-$(document).ready(function(){
-    showImagesText('.grpMdlmWrap', '.grpMdlmWrap .tekstLeft');
+  $(document).ready(function(){
+    showImagesTextRight('.grpMdlmWrap', '.grpMdlmWrap .tekstRight', '.grpMdlmWrap .fadeSlow');
   });
 
   $(window).scroll(function() {
-    showImagesText('.grpMdlmWrap', '.grpMdlmWrap .tekstLeft');
+    showImagesTextRight('.grpMdlmWrap', '.grpMdlmWrap .tekstRight', '.grpMdlmWrap .fadeSlow');
+  });
+
+$(document).ready(function(){
+    showImagesTextLeft('.grpMdlmWrap', '.grpMdlmWrap .tekstLeft', '.grpMdlmWrap .fadeSlow');
+  });
+
+  $(window).scroll(function() {
+    showImagesTextLeft('.grpMdlmWrap', '.grpMdlmWrap .tekstLeft', '.grpMdlmWrap .fadeSlow');
   });
 
 
-  function moveFromRight() {
-    var elem = document.getElementById("tekstRight");   
+
+
+
+  function moveFromRight(elem) { 
+    
     var pos = 50;
     var id = setInterval(frame, 10);
     function frame() {
@@ -100,14 +79,12 @@ $(document).ready(function(){
         clearInterval(id);
       } else {
         pos = pos - 1; 
-        elem.style.left = pos + 'px';
+        $(elem).css("left", pos + 'px');
       }
     }
   }
 
-  function moveFromLeft(elem) {
-  console.log(elem);  
-    //var elem = document.getElementsByClassName("tekstLeft");   
+  function moveFromLeft(elem) { 
     var pos = -50;
     var id = setInterval(frame, 10);
     function frame() {
@@ -118,4 +95,15 @@ $(document).ready(function(){
         $(elem).css("left", pos + 'px');
       }
     }
+  }
+
+  function scrollCheck(elem){
+
+    var thisPos = $(elem).offset().top;
+    var windowHeight = jQuery( window ).height();
+    var topOfWindow = $(window).scrollTop();
+    if (topOfWindow + windowHeight - 200 > thisPos ) {
+        return true;
+    }
+    return false;
   }
