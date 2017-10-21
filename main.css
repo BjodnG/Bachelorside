@@ -1,15 +1,4 @@
-@font-face {
-    font-family: 'discoregular';
-    src: url('fonts/DISCO___-webfont.eot');
-    src: url('fonts/DISCO___-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/DISCO___-webfont.woff') format('woff'),
-         url('fonts/DISCO___-webfont.woff') format('woff'),
-         url('fonts/DISCO___-webfont.ttf') format('truetype'),
-         url('fonts/DISCO___-webfont.svg#discoregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 @font-face {
     font-family: 'arvoBold';
     src: url('fonts/arvo-bold_201-webfont.woff2') format('woff2'),
@@ -22,6 +11,7 @@
 p, a{
 	font-family: "arvoBold";
 	font-weight: bold;
+	text-decoration-line: none;
 	
 }
 nav-a{
