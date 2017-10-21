@@ -1,10 +1,13 @@
+
+
 .footer{
 	background-color: #292c2f;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: center;
-	font: normal 18px sans-serif;
+	font-family: "arvoBold";
+	font-size:  18px ;
 
 	padding: 45px;
 	margin-top: 80px;

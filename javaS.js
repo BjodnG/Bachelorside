@@ -38,30 +38,22 @@
           }
       });
   }
-  /*
-  function showImagesTextRight(wrap, text, img) {
-
-      $(wrap).each(function(){
-          if (scrollCheck($(this))) {
-              $(text).each(function(){
-                  if($(this).css('left') == '50px')
-                    moveFromRight($(this));
-              });
-              $(img).each(function(){
-                $(this).addClass("fadeInSlow");
-              });
-          }
-      });
-  }*/
 
   $(document).ready(function(){
     showImagesText('#ThomasG', '#ThomasG .tekstRight', '#ThomasG .fadeSlow');
+    showImagesText('#LarsH', '#LarsH .tekstLeft', '#LarsH .fadeSlow');
+    showImagesText('#ThomasL', '#ThomasL .tekstRight', '#ThomasL .fadeSlow');
+    showImagesText('#KimFK', '#KimFK .tekstLeft', '#KimFK .fadeSlow');
+
   });
 
   $(window).scroll(function() {
     showImagesText('#ThomasG', '#ThomasG .tekstRight', '#ThomasG .fadeSlow');
+    showImagesText('#LarsH', '#LarsH .tekstLeft', '#LarsH .fadeSlow');
+    showImagesText('#ThomasL', '#ThomasL .tekstRight', '#ThomasL .fadeSlow');
+    showImagesText('#KimFK', '#KimFK .tekstLeft', '#KimFK .fadeSlow');
   });
-
+/*
 $(document).ready(function(){
     showImagesText('#LarsH', '#LarsH .tekstLeft', '#LarsH .fadeSlow');
   });
@@ -69,8 +61,7 @@ $(document).ready(function(){
   $(window).scroll(function() {
     showImagesText('#LarsH', '#LarsH .tekstLeft', '#LarsH .fadeSlow');
   });
-
-
+*/
 
 
 
