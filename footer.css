@@ -12,19 +12,20 @@
 
 .footer .footer-motto{
 	color:  #8d9093;
-	font-size: 24px;
+	font-size: 28px;
 	margin: 0;
 }
 
 .footer .footer-gruppe{
 	color:  #8f9296;
-	font-size: 14px;
+	font-size: 18px;
 	margin: 0;
 }
 
 .footer .footer-mail{
 	list-style: none;
 	font-weight: bold;
+	font-size: 24px;
 	color:  #ffffff;
 	padding: 35px 0 23px;
 	margin: 0;

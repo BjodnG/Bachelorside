@@ -81,3 +81,43 @@ nav-a{
     100%{opacity:1}
 }
 
+
+.bilder{
+	max-width: 100%;
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+	.tekstNorm{
+		font-size: 18px;
+	}
+	.tekstOver{
+		font-size: 22px;
+	}
+
+	.bilder{
+		max-width: 10	0%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+
+	.tekstNorm{
+		font-size: 14px;
+	}
+	.tekstOver{
+		font-size: 20px;
+	}
+
+	.bilder{
+		max-width: 60%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
