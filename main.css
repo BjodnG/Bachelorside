@@ -21,6 +21,12 @@ nav-a{
 	font-size: 22px;
 }
 
+.tekstHead{
+	font-size: 36px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
 #head{
 	color: white;
 
@@ -53,6 +59,9 @@ nav-a{
 }
 .tekstLeft{
 	left: -50px;
+}
+.tekstSmall{
+	visibility: hidden;
 }
 
 /* ANIMERING */
@@ -94,9 +103,14 @@ nav-a{
 	.tekstOver{
 		font-size: 22px;
 	}
+	.tekstHead{
+		font-size: 28px;
+		margin-top: 20px;
+    	margin-bottom: 10px;
+	}
 
 	.bilder{
-		max-width: 10	0%;
+		max-width: 100%;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
@@ -107,17 +121,34 @@ nav-a{
 @media screen and (min-width: 0px) and (max-width: 768px) {
 
 	.tekstNorm{
-		font-size: 14px;
+		font-size: 18px;
 	}
 	.tekstOver{
-		font-size: 20px;
+		font-size: 22px;
+	}
+	.tekstHead{
+		font-size: 28px;
+		margin-top: 20px;
+    	margin-bottom: 10px;
 	}
 
 	.bilder{
-		max-width: 60%;
+		max-width: 50%;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.tekstLeft{
+		visibility: hidden;
+		height: 0px;
+	}
+	.tekstRight{
+		visibility: hidden;
+		height: 0px;
+	}
+	.tekstSmall{
+		visibility: visible;
 	}
 
 }
