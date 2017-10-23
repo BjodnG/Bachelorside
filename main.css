@@ -62,6 +62,7 @@ nav-a{
 }
 .tekstSmall{
 	visibility: hidden;
+	height: 0px;
 }
 
 /* ANIMERING */
