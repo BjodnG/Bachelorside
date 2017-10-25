@@ -27,7 +27,7 @@
 	font-weight: bold;
 	font-size: 24px;
 	color:  #ffffff;
-	padding: 35px 0 23px;
+	padding: 10px 0 23px;
 	margin: 0;
 }
 
@@ -36,7 +36,6 @@
 	color: inherit;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 600px) {
 

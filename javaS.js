@@ -44,6 +44,7 @@
     showImagesText('#LarsH', '#LarsH .tekstLeft', '#LarsH .fadeSlow');
     showImagesText('#ThomasL', '#ThomasL .tekstRight', '#ThomasL .fadeSlow');
     showImagesText('#KimFK', '#KimFK .tekstLeft', '#KimFK .fadeSlow');
+    showImagesText('#BjornG', '#BjornG .tekstRight', '#BjornG .fadeSlow');
 
   });
 
@@ -52,6 +53,7 @@
     showImagesText('#LarsH', '#LarsH .tekstLeft', '#LarsH .fadeSlow');
     showImagesText('#ThomasL', '#ThomasL .tekstRight', '#ThomasL .fadeSlow');
     showImagesText('#KimFK', '#KimFK .tekstLeft', '#KimFK .fadeSlow');
+    showImagesText('#BjornG', '#BjornG .tekstRight', '#BjornG .fadeSlow');
   });
 /*
 $(document).ready(function(){
@@ -102,3 +104,17 @@ $(document).ready(function(){
     }
     return false;
   }
+
+
+  $(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 110) {
+        $('#head').addClass('fixed');
+        $('#head .headTag').removeClass('tekstHead');
+        $('#head .headTag').addClass('tekstNorm');
+        $('#head .navbarTag').removeClass('myNavbar');
+    } else {
+        $('#head').removeClass('fixed');
+        $('#head .headTag').addClass('tekstHead');
+        $('#head .navbarTag').addClass('myNavbar');
+    }
+});
